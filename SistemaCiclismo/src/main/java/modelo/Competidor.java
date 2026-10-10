@@ -31,5 +31,19 @@ public class Competidor extends Atleta {
     public double getPeso() { return peso; }
     public void setPeso(double peso) { this.peso = peso; }
 
-    public int getPuntos() { return puntos; }    
+    public int getPuntos() { return puntos; }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+               " | Ranking: " + ranking +
+               " | Estatura: " + estatura +
+               " | Peso: " + peso +
+               " | Puntos: " + puntos;
+    }
+    
+    public void actualizarRanking(int puntosObtenidos) {
+        this.puntos += puntosObtenidos;
+        this.ranking = Math.max(1, this.ranking - puntosObtenidos);
+    }    
 }
