@@ -4,6 +4,9 @@
 
 package com.mycompany.sistemaciclismo;
 
+import controlador.ControladorMundial;
+import vista.VistaMundial;
+
 /**
  *
  * @author juans
@@ -11,6 +14,8 @@ package com.mycompany.sistemaciclismo;
 public class SistemaCiclismo {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        VistaMundial vista = new VistaMundial();
+        ControladorMundial controlador = new ControladorMundial(vista);
+        controlador.iniciar();
     }
 }
