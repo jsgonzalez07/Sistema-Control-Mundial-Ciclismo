@@ -45,5 +45,24 @@ public class Competidor extends Atleta {
     public void actualizarRanking(int puntosObtenidos) {
         this.puntos += puntosObtenidos;
         this.ranking = Math.max(1, this.ranking - puntosObtenidos);
+    }
+
+    public void actualizarRanking(int puntosObtenidos, boolean ganoMedalla) {
+        this.puntos += puntosObtenidos;
+
+        if (ganoMedalla) {
+            if (puntosObtenidos > 50) {
+
+                this.ranking = Math.max(1, this.ranking - 5);
+            } else if (puntosObtenidos > 20) {
+
+                this.ranking = Math.max(1, this.ranking - 3);
+            } else {
+
+                this.ranking = Math.max(1, this.ranking - 1);
+            }
+        } else {
+            this.ranking = Math.max(1, this.ranking - puntosObtenidos);
+        }
     }    
 }
